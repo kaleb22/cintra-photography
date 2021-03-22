@@ -1,20 +1,20 @@
 .app-header {
-    overflow: hidden;
-    background-color: #7c7b7b;
-    padding: 20px 10px;
+  overflow: hidden;
+  background-color: #7c7b7b;
+  padding: 20px 10px;
 
-    &--right {
-        float: right;
-    }
+  &--right {
+    float: right;
+  }
 }
 
-.list-unstyled {
-    list-style-type: none;
+.list li {
+  display: inline;
+  padding: 10px;
 
-    li {
-        display: inline;
-        padding: 10px
-    }
+  &--unstyled {
+    list-style-type: none;
+  }
 }
 
 .fa {
