@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #7c7b7b;
+  //background-color: #7c7b7b;
 
   &--right {
     float: right;
@@ -15,6 +15,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 40px;
 }
 
 .nav-container {
@@ -23,11 +24,23 @@
 }
 
 .btn-menu {
-  border: 2px;
-  border-color: black;
-  border-style: solid;
   width: 100%;
   text-align: center;
+  height: inherit;
+
+  a {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    color: white;
+    height: inherit;
+    padding: 7px;
+  }
+
+  a:hover, a:active {
+    background-color: #8c8b8b;
+    color: white;
+  }
 }
 
 .app-logo img {
@@ -37,13 +50,8 @@
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-}
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
   .app-logo {
-    max-width: 500px;
-    max-height: 350px;
+    max-width: 325px;
   }
 }
 
@@ -51,11 +59,10 @@
 @media only screen and (min-width: 768px) {
   .app-logo {
     max-width: 500px;
-    max-height: 350px;
   }
 
   .nav-container {
-    width: 524px;
+    width: 580px;
   }
 } 
 
