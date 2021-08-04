@@ -22,6 +22,20 @@ const HeaderPage = () => {
           </header>
         </Col>
       </Row>
+      <Row>
+        <Col>
+        <div className="nav-container">
+          <div className="nav-container-grid">
+              <div className="btn-menu">Btn 1</div>
+              <div className="btn-menu">Btn 2</div>
+              <div className="btn-menu">Btn 3</div>
+              <div className="btn-menu">Btn 4</div>
+            </div>
+        </div>
+        </Col>
+
+
+      </Row>
     </Container>
     )
 }

@@ -7,7 +7,7 @@ const BodyComponent = () => {
   return (
     <Container>
       <Row>
-        <Col>Teste</Col>
+        <Col>BODY</Col>
       </Row>
     </Container>
   )

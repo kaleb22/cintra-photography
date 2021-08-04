@@ -1,14 +1,33 @@
 .app-header {
   overflow: hidden;
-  background-color: #7c7b7b;
   padding: 20px 10px;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #7c7b7b;
 
   &--right {
     float: right;
   }
+}
+
+.nav-container-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-container {
+  margin: auto;
+  background-color: #424242;
+}
+
+.btn-menu {
+  border: 2px;
+  border-color: black;
+  border-style: solid;
+  width: 100%;
+  text-align: center;
 }
 
 .app-logo img {
@@ -18,15 +37,11 @@
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-  .app-logo {
-    background: red;
-  }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
   .app-logo {
-    background: green;
     max-width: 500px;
     max-height: 350px;
   }
@@ -35,9 +50,12 @@
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
   .app-logo {
-    background: blue;
     max-width: 500px;
     max-height: 350px;
+  }
+
+  .nav-container {
+    width: 524px;
   }
 } 
 
