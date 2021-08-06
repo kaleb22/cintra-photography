@@ -73,7 +73,6 @@ const BodyComponent = () => {
               </div>
             </div>
           </div>
-          
         </Row>
 
         <Row>
@@ -90,9 +89,39 @@ const BodyComponent = () => {
 
         <Row>
           <Col>
-          <h1 className="section-title">Ensaios New Born</h1>
+          <h1 className="section-title">Ensaios NewBorn</h1>
           </Col>
           <UncontrolledCarousel items={items} indicators={false} controls={true} autoPlay={false}/>
+        </Row>
+
+        <Row>
+          <Col>
+            <div className="about-me-title-container mg-top">
+              <h1 className="section-title">Ensaios XXX</h1>
+            </div>
+          </Col>
+        </Row>
+
+        <Row>
+          <div className="container-grid">
+            <div className="container-icons">
+              <div className="container-ball-icons">
+                <div className="ball-icon"></div>
+                <div className="ball-icon"></div>
+                <div className="ball-icon"></div>
+              </div>
+
+              <IconContext.Provider value={{ color: "#424242", size:  "2em", sytle: "opacity: 0.8"}}>
+                <span> <BsCamera /> </span>
+              </IconContext.Provider>
+              
+              <div className="container-ball-icons">
+                <div className="ball-icon"></div>
+                <div className="ball-icon"></div>
+                <div className="ball-icon"></div>
+              </div>
+            </div>
+          </div>
         </Row>
       </Container>
     </Scroll>
