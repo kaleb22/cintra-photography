@@ -1,8 +1,9 @@
 import { render } from '@testing-library/react';
 import './BodyComponent.scss';
-import React from 'react';
+import React, {useEffect} from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import { UncontrolledCarousel } from 'reactstrap';
+import WebFont from 'webfontloader';
 
 const items = [
   {
@@ -30,13 +31,39 @@ const items = [
 
 const BodyComponent = () => {
 
+    useEffect(() => {
+      WebFont.load({
+        google: {
+          families: ['Barlow Semi Condensed']
+        }
+      });
+     }, []);
+
   return (
     <Container>
+
       <Row>
-        <Col>BODY</Col>
+        <Col>
+          <h1 className="section-title">Sobre Mim</h1>
+
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel justo sed dui faucibus placerat. Donec vitae nisi eget leo mattis faucibus. Pellentesque varius lacus eu quam ultricies, in auctor arcu consectetur. Nullam nulla metus, posuere sed volutpat id, interdum in diam. Pellentesque leo nisl, egestas non tristique et, imperdiet quis justo. Vivamus sem ex, efficitur ac purus vehicula, eleifend cursus ante. Praesent et sem at nisi cursus blandit.
+          </p>
+
+          <p>
+            Phasellus euismod, magna ut sollicitudin porta, nisi urna auctor metus, vel fermentum est sem lacinia est. Nulla vitae efficitur justo. Vivamus in bibendum nisi. Aenean pellentesque elit eu nulla vehicula, vitae posuere urna faucibus. Vestibulum at sapien ac lorem vehicula volutpat vel sed est. Donec sit amet viverra quam, ac egestas magna. Integer ultrices scelerisque ligula nec feugiat. Mauris quis ipsum nibh.
+          </p>
+        </Col>
       </Row>
 
-      <UncontrolledCarousel items={items} indicators={false} controls={true} autoPlay={false}/>
+      <Row>
+        <Col>
+        <h1>Ensaios New Born</h1>
+        </Col>
+        <UncontrolledCarousel items={items} indicators={false} controls={true} autoPlay={false}/>
+      </Row>
+
+      
     </Container>
   )
 
