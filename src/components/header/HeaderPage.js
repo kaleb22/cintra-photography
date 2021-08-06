@@ -10,7 +10,7 @@ const HeaderPage = () => {
           <header className="app-header">
             {/* <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link> */}
             <div className="app-logo">
-              <img src="rapha_sem_logo.png"></img>
+              <img src={process.env.PUBLIC_URL + '/rapha_sem_logo.png'} alt="raphaela cintra fotografia logo"></img>
             </div>
             
 {/*             <div className="app-header--right">
