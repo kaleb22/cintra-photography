@@ -58,7 +58,7 @@ const BodyComponent = () => {
 
       <Row>
         <Col>
-        <h1>Ensaios New Born</h1>
+        <h1 className="section-title">Ensaios New Born</h1>
         </Col>
         <UncontrolledCarousel items={items} indicators={false} controls={true} autoPlay={false}/>
       </Row>
