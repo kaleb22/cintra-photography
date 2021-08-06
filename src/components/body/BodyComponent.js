@@ -4,6 +4,8 @@ import React, {useEffect} from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import { UncontrolledCarousel } from 'reactstrap';
 import WebFont from 'webfontloader';
+import { BsCamera } from "react-icons/bs";
+import { IconContext } from "react-icons";
 
 const items = [
   {
@@ -44,8 +46,37 @@ const BodyComponent = () => {
 
       <Row>
         <Col>
-          <h1 className="section-title">Sobre Mim</h1>
+          <div className="about-me-title-container mg-top">
+            <h1 className="section-title">Sobre Mim</h1>
+          </div>
+        </Col>
+      </Row>
 
+      <Row>
+        <div className="container-grid">
+          <div className="container-icons">
+            <div className="container-ball-icons">
+              <div className="ball-icon"></div>
+              <div className="ball-icon"></div>
+              <div className="ball-icon"></div>
+            </div>
+
+            <IconContext.Provider value={{ color: "#424242", size:  "2em", sytle: "opacity: 0.8"}}>
+              <span> <BsCamera /> </span>
+            </IconContext.Provider>
+            
+            <div className="container-ball-icons">
+              <div className="ball-icon"></div>
+              <div className="ball-icon"></div>
+              <div className="ball-icon"></div>
+            </div>
+          </div>
+        </div>
+        
+      </Row>
+
+      <Row>
+        <Col>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel justo sed dui faucibus placerat. Donec vitae nisi eget leo mattis faucibus. Pellentesque varius lacus eu quam ultricies, in auctor arcu consectetur. Nullam nulla metus, posuere sed volutpat id, interdum in diam. Pellentesque leo nisl, egestas non tristique et, imperdiet quis justo. Vivamus sem ex, efficitur ac purus vehicula, eleifend cursus ante. Praesent et sem at nisi cursus blandit.
           </p>
