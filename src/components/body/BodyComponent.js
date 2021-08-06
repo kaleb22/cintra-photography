@@ -6,6 +6,7 @@ import { UncontrolledCarousel } from 'reactstrap';
 import WebFont from 'webfontloader';
 import { BsCamera } from "react-icons/bs";
 import { IconContext } from "react-icons";
+import Scroll from '../scroll/Scroll.js';
 
 const items = [
   {
@@ -42,60 +43,59 @@ const BodyComponent = () => {
      }, []);
 
   return (
-    <Container>
-
-      <Row>
-        <Col>
-          <div className="about-me-title-container mg-top">
-            <h1 className="section-title">Sobre Mim</h1>
-          </div>
-        </Col>
-      </Row>
-
-      <Row>
-        <div className="container-grid">
-          <div className="container-icons">
-            <div className="container-ball-icons">
-              <div className="ball-icon"></div>
-              <div className="ball-icon"></div>
-              <div className="ball-icon"></div>
+    <Scroll>
+      <Container>
+        <Row>
+          <Col>
+            <div className="about-me-title-container mg-top">
+              <h1 className="section-title">Sobre Mim</h1>
             </div>
+          </Col>
+        </Row>
 
-            <IconContext.Provider value={{ color: "#424242", size:  "2em", sytle: "opacity: 0.8"}}>
-              <span> <BsCamera /> </span>
-            </IconContext.Provider>
-            
-            <div className="container-ball-icons">
-              <div className="ball-icon"></div>
-              <div className="ball-icon"></div>
-              <div className="ball-icon"></div>
+        <Row>
+          <div className="container-grid">
+            <div className="container-icons">
+              <div className="container-ball-icons">
+                <div className="ball-icon"></div>
+                <div className="ball-icon"></div>
+                <div className="ball-icon"></div>
+              </div>
+
+              <IconContext.Provider value={{ color: "#424242", size:  "2em", sytle: "opacity: 0.8"}}>
+                <span> <BsCamera /> </span>
+              </IconContext.Provider>
+              
+              <div className="container-ball-icons">
+                <div className="ball-icon"></div>
+                <div className="ball-icon"></div>
+                <div className="ball-icon"></div>
+              </div>
             </div>
           </div>
-        </div>
-        
-      </Row>
+          
+        </Row>
 
-      <Row>
-        <Col>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel justo sed dui faucibus placerat. Donec vitae nisi eget leo mattis faucibus. Pellentesque varius lacus eu quam ultricies, in auctor arcu consectetur. Nullam nulla metus, posuere sed volutpat id, interdum in diam. Pellentesque leo nisl, egestas non tristique et, imperdiet quis justo. Vivamus sem ex, efficitur ac purus vehicula, eleifend cursus ante. Praesent et sem at nisi cursus blandit.
-          </p>
+        <Row>
+          <Col>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel justo sed dui faucibus placerat. Donec vitae nisi eget leo mattis faucibus. Pellentesque varius lacus eu quam ultricies, in auctor arcu consectetur. Nullam nulla metus, posuere sed volutpat id, interdum in diam. Pellentesque leo nisl, egestas non tristique et, imperdiet quis justo. Vivamus sem ex, efficitur ac purus vehicula, eleifend cursus ante. Praesent et sem at nisi cursus blandit.
+            </p>
 
-          <p>
-            Phasellus euismod, magna ut sollicitudin porta, nisi urna auctor metus, vel fermentum est sem lacinia est. Nulla vitae efficitur justo. Vivamus in bibendum nisi. Aenean pellentesque elit eu nulla vehicula, vitae posuere urna faucibus. Vestibulum at sapien ac lorem vehicula volutpat vel sed est. Donec sit amet viverra quam, ac egestas magna. Integer ultrices scelerisque ligula nec feugiat. Mauris quis ipsum nibh.
-          </p>
-        </Col>
-      </Row>
+            <p>
+              Phasellus euismod, magna ut sollicitudin porta, nisi urna auctor metus, vel fermentum est sem lacinia est. Nulla vitae efficitur justo. Vivamus in bibendum nisi. Aenean pellentesque elit eu nulla vehicula, vitae posuere urna faucibus. Vestibulum at sapien ac lorem vehicula volutpat vel sed est. Donec sit amet viverra quam, ac egestas magna. Integer ultrices scelerisque ligula nec feugiat. Mauris quis ipsum nibh.
+            </p>
+          </Col>
+        </Row>
 
-      <Row>
-        <Col>
-        <h1 className="section-title">Ensaios New Born</h1>
-        </Col>
-        <UncontrolledCarousel items={items} indicators={false} controls={true} autoPlay={false}/>
-      </Row>
-
-      
-    </Container>
+        <Row>
+          <Col>
+          <h1 className="section-title">Ensaios New Born</h1>
+          </Col>
+          <UncontrolledCarousel items={items} indicators={false} controls={true} autoPlay={false}/>
+        </Row>
+      </Container>
+    </Scroll>
   )
 
 };
