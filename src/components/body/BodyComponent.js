@@ -4,9 +4,8 @@ import React, {useEffect} from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import { UncontrolledCarousel } from 'reactstrap';
 import WebFont from 'webfontloader';
-import { BsCamera } from "react-icons/bs";
-import { IconContext } from "react-icons";
 import Scroll from '../scroll/Scroll.js';
+import IconsComponent from '../icons/IconsComponent';
 
 const items = [
   {
@@ -45,36 +44,7 @@ const BodyComponent = () => {
   return (
     <Scroll>
       <Container>
-        <Row>
-          <Col>
-            <div className="about-me-title-container mg-top">
-              <h1 className="section-title">Sobre Mim</h1>
-            </div>
-          </Col>
-        </Row>
-
-        <Row>
-          <div className="container-grid">
-            <div className="container-icons">
-              <div className="container-ball-icons">
-                <div className="ball-icon"></div>
-                <div className="ball-icon"></div>
-                <div className="ball-icon"></div>
-              </div>
-
-              <IconContext.Provider value={{ color: "#424242", size:  "2em", sytle: "opacity: 0.8"}}>
-                <span> <BsCamera /> </span>
-              </IconContext.Provider>
-              
-              <div className="container-ball-icons">
-                <div className="ball-icon"></div>
-                <div className="ball-icon"></div>
-                <div className="ball-icon"></div>
-              </div>
-            </div>
-          </div>
-        </Row>
-
+        <IconsComponent sectionTitle="Sobre Mim"></IconsComponent>
         <Row>
           <Col>
             <p>
@@ -87,42 +57,18 @@ const BodyComponent = () => {
           </Col>
         </Row>
 
+        <IconsComponent sectionTitle="Ensaios NewBorn"></IconsComponent>
+
         <Row>
-          <Col>
-          <h1 className="section-title">Ensaios NewBorn</h1>
-          </Col>
           <UncontrolledCarousel items={items} indicators={false} controls={true} autoPlay={false}/>
         </Row>
 
-        <Row>
-          <Col>
-            <div className="about-me-title-container mg-top">
-              <h1 className="section-title">Ensaios XXX</h1>
-            </div>
-          </Col>
-        </Row>
+        <IconsComponent sectionTitle="Ensaios Gestante"></IconsComponent>
 
         <Row>
-          <div className="container-grid">
-            <div className="container-icons">
-              <div className="container-ball-icons">
-                <div className="ball-icon"></div>
-                <div className="ball-icon"></div>
-                <div className="ball-icon"></div>
-              </div>
-
-              <IconContext.Provider value={{ color: "#424242", size:  "2em", sytle: "opacity: 0.8"}}>
-                <span> <BsCamera /> </span>
-              </IconContext.Provider>
-              
-              <div className="container-ball-icons">
-                <div className="ball-icon"></div>
-                <div className="ball-icon"></div>
-                <div className="ball-icon"></div>
-              </div>
-            </div>
-          </div>
+          <UncontrolledCarousel items={items} indicators={false} controls={true} autoPlay={false}/>
         </Row>
+
       </Container>
     </Scroll>
   )
