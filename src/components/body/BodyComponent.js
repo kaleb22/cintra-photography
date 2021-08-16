@@ -58,16 +58,28 @@ const BodyComponent = () => {
         </Row>
 
         <IconsComponent sectionTitle="Ensaios NewBorn"></IconsComponent>
+        <p className="center-text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel justo sed dui faucibus placerat. Donec vitae nisi eget leo mattis faucibus.
+        </p>
 
         <Row>
           <UncontrolledCarousel items={items} indicators={false} controls={true} autoPlay={false}/>
         </Row>
 
         <IconsComponent sectionTitle="Ensaios Gestante"></IconsComponent>
+        <p className="center-text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel justo sed dui faucibus placerat. Donec vitae nisi eget leo mattis faucibus.
+        </p>
 
         <Row>
           <UncontrolledCarousel items={items} indicators={false} controls={true} autoPlay={false}/>
         </Row>
+
+        <Row>
+          <div style={{ backgroundColor: '#bfbfb4', height: '6em' }}></div>
+        </Row>
+
+
 
       </Container>
     </Scroll>
