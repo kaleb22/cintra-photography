@@ -26,10 +26,10 @@ const HeaderPage = () => {
         <Col>
         <div className="nav-container">
           <div className="nav-container-grid">
-              <div className="btn-menu"> <a href="id1">Menu 1</a> </div>
-              <div className="btn-menu"> <a href="id2">Menu 2</a> </div>
-              <div className="btn-menu"> <a href="id3">Menu 3</a> </div>
-              <div className="btn-menu"> <a href="id4">Menu 4</a> </div>
+              <div className="btn-menu"> <a href="#sobreMim">Home</a> </div>
+              <div className="btn-menu"> <a href="#ensaioNewBorn">Ensaios NewBorn</a> </div>
+              <div className="btn-menu"> <a href="#ensaioGestante">Ensaios Gestante</a> </div>
+              <div className="btn-menu"> <a href="#id4">Menu 4</a> </div>
             </div>
         </div>
         </Col>

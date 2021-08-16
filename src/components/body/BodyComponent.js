@@ -44,7 +44,7 @@ const BodyComponent = () => {
   return (
     <Scroll>
       <Container>
-        <IconsComponent sectionTitle="Sobre Mim"></IconsComponent>
+        <IconsComponent sectionTitle="Sobre Mim" id="sobreMim"></IconsComponent>
         <Row>
           <Col>
             <p>
@@ -57,7 +57,7 @@ const BodyComponent = () => {
           </Col>
         </Row>
 
-        <IconsComponent sectionTitle="Ensaios NewBorn"></IconsComponent>
+        <IconsComponent sectionTitle="Ensaios NewBorn" id="ensaioNewBorn"></IconsComponent>
         <p className="center-text">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel justo sed dui faucibus placerat. Donec vitae nisi eget leo mattis faucibus.
         </p>
@@ -66,7 +66,7 @@ const BodyComponent = () => {
           <UncontrolledCarousel items={items} indicators={false} controls={true} autoPlay={false}/>
         </Row>
 
-        <IconsComponent sectionTitle="Ensaios Gestante"></IconsComponent>
+        <IconsComponent sectionTitle="Ensaios Gestante" id="ensaioGestante"></IconsComponent>
         <p className="center-text">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel justo sed dui faucibus placerat. Donec vitae nisi eget leo mattis faucibus.
         </p>
