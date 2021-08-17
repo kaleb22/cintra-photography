@@ -7,10 +7,10 @@ import { IconContext } from "react-icons";
 const IconsComponent = ({ sectionTitle }) => {
 
   return (
-    <div>
+    <div style={{ padding: '1em'}}>
       <Row>
         <Col>
-          <div className="section-title-container mg-top">
+          <div className="section-title-container">
             <h1 className="section-title">{sectionTitle}</h1>
           </div>
         </Col>
