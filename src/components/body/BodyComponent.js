@@ -6,6 +6,7 @@ import { UncontrolledCarousel } from 'reactstrap';
 import WebFont from 'webfontloader';
 import Scroll from '../scroll/Scroll.js';
 import IconsComponent from '../icons/IconsComponent';
+import FormComponent from '../form/FormComponent';
 
 const items = [
   {
@@ -73,6 +74,15 @@ const BodyComponent = () => {
 
         <Row>
           <UncontrolledCarousel items={items} indicators={false} controls={true} autoPlay={false}/>
+        </Row>
+
+        <IconsComponent sectionTitle="Entre em contato" id="contato"></IconsComponent>
+        <p className="center-text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel justo sed dui faucibus placerat. Donec vitae nisi eget leo mattis faucibus.
+        </p>
+
+        <Row>
+          <FormComponent></FormComponent>
         </Row>
 
         <Row>

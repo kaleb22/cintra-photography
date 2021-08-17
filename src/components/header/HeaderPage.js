@@ -27,9 +27,9 @@ const HeaderPage = () => {
         <div className="nav-container">
           <div className="nav-container-grid">
               <div className="btn-menu"> <a href="#sobreMim">Home</a> </div>
-              <div className="btn-menu"> <a href="#ensaioNewBorn">Ensaios NewBorn</a> </div>
-              <div className="btn-menu"> <a href="#ensaioGestante">Ensaios Gestante</a> </div>
-              <div className="btn-menu"> <a href="#id4">Menu 4</a> </div>
+              <div className="btn-menu"> <a href="#ensaioNewBorn">NewBorn</a> </div>
+              <div className="btn-menu"> <a href="#ensaioGestante">Gestante</a> </div>
+              <div className="btn-menu"> <a href="#id4">Contato</a> </div>
             </div>
         </div>
         </Col>
