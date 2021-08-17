@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/cintra-photography/static/css/main.3046017b.chunk.css",
+    "main.css": "/cintra-photography/static/css/main.0af741f7.chunk.css",
     "main.js": "/cintra-photography/static/js/main.7ef46cf2.chunk.js",
     "main.js.map": "/cintra-photography/static/js/main.7ef46cf2.chunk.js.map",
     "runtime-main.js": "/cintra-photography/static/js/runtime-main.49e36051.js",
@@ -12,14 +12,14 @@
     "static/js/3.44c7274a.chunk.js.map": "/cintra-photography/static/js/3.44c7274a.chunk.js.map",
     "index.html": "/cintra-photography/index.html",
     "static/css/2.4be38407.chunk.css.map": "/cintra-photography/static/css/2.4be38407.chunk.css.map",
-    "static/css/main.3046017b.chunk.css.map": "/cintra-photography/static/css/main.3046017b.chunk.css.map",
+    "static/css/main.0af741f7.chunk.css.map": "/cintra-photography/static/css/main.0af741f7.chunk.css.map",
     "static/js/2.7500d880.chunk.js.LICENSE.txt": "/cintra-photography/static/js/2.7500d880.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.49e36051.js",
     "static/css/2.4be38407.chunk.css",
     "static/js/2.7500d880.chunk.js",
-    "static/css/main.3046017b.chunk.css",
+    "static/css/main.0af741f7.chunk.css",
     "static/js/main.7ef46cf2.chunk.js"
   ]
 }
