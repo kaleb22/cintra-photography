@@ -1,0 +1,23 @@
+.form-container-grid {
+  margin: auto;
+}
+
+.form-container {
+  width: auto;
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .form-container {
+    max-width: 34em !important;
+    margin: auto;
+  }
+}
+
+.field-size {
+  width: 18em;
+}
+
+.field-title {
+  padding: 0.5em 0 0.5em 0;
+}

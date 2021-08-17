@@ -76,6 +76,15 @@ const BodyComponent = () => {
           <UncontrolledCarousel items={items} indicators={false} controls={true} autoPlay={false}/>
         </Row>
 
+        <IconsComponent sectionTitle="Ensaios Familia" id="ensaioFamilia"></IconsComponent>
+        <p className="center-text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel justo sed dui faucibus placerat. Donec vitae nisi eget leo mattis faucibus.
+        </p>
+
+        <Row>
+          <UncontrolledCarousel items={items} indicators={false} controls={true} autoPlay={false}/>
+        </Row>
+
         <IconsComponent sectionTitle="Entre em contato" id="contato"></IconsComponent>
         <p className="center-text">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel justo sed dui faucibus placerat. Donec vitae nisi eget leo mattis faucibus.
