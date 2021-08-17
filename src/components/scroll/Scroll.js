@@ -3,7 +3,7 @@ import './Scroll.scss'
 
 const Scroll = (props) => {
     return (
-        <div style={{ overflow: 'scroll', height:'32em'}} className="hide-scrollbar">
+        <div className="hide-scrollbar container-scroll">
             {props.children}
         </div>
     );
