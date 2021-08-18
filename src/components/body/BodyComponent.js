@@ -1,4 +1,3 @@
-import { render } from '@testing-library/react';
 import './BodyComponent.scss';
 import React, {useEffect} from 'react';
 import { Container, Row, Col } from 'reactstrap';
@@ -97,8 +96,6 @@ const BodyComponent = () => {
         <Row>
           <div style={{ backgroundColor: '#bfbfb4', height: '6em' }}></div>
         </Row>
-
-
 
       </Container>
     </Scroll>
