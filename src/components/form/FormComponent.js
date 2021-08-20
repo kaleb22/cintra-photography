@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Form, FormGroup, Label, Input, FormFeedback } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input, FormFeedback, Alert } from 'reactstrap';
 import InputMask from 'react-input-mask';
 import emailjs from 'emailjs-com';
 
@@ -17,7 +17,8 @@ class FormComponent extends Component {
       validate: {
         nameState: '',
         emailState: '',
-        celphoneState: ''
+        celphoneState: '', 
+        showFeedbackMsg: false
       }
     };
     
@@ -76,22 +77,35 @@ class FormComponent extends Component {
     debugger;
     e.preventDefault();
 
-    emailjs.sendForm(process.env.REACT_APP_SERVICE_ID,
-                     process.env.REACT_APP_TEMPLATE_ID,
-                     e.target,
-                     process.env.REACT_APP_USER_ID)
-      .then((result) => {
-          console.log(result.text);
-      }, (error) => {
-          console.log(error.text);
-      });
+    const { validate } = this.state;
+
+    if( validate.nameState     === 'has-success' & 
+        validate.emailState    === 'has-success' & 
+        validate.celphoneState === 'has-success') {
+          emailjs.sendForm(process.env.REACT_APP_SERVICE_ID,
+            process.env.REACT_APP_TEMPLATE_ID,
+            e.target,
+            process.env.REACT_APP_USER_ID)
+            .then((result) => {
+            validate.showFeedbackMsg = true;
+            this.setState({ validate });
+            console.log(result.text);
+            }, (error) => {
+            console.log(error.text);
+            });
+        } else {
+          return;
+        }
   }
 
   render() {
     const { clientName, clientEmail, clientPhone } = this.state;
+    const { showFeedbackMsg } = this.state.validate;
     return(
       <div className="form-container">
-        <Form>
+        <Form onSubmit={ (e) => {
+          this.sendEmail(e);
+        }}>
           <FormGroup className="field-size">
             <Label for="nameField" className="field-title">Nome:</Label>
             <Input 
@@ -108,7 +122,7 @@ class FormComponent extends Component {
               onBlur={ (e) => {
                 this.validateFields(e);
               }} />
-            <FormFeedback>Esse campo não aceita números e caracteres especiais.</FormFeedback>
+            <FormFeedback>Campo obrigatório. obs: campo não aceita números e caracteres especiais.</FormFeedback>
           </FormGroup>
           <FormGroup className="field-size">
             <Label for="emailField" className="field-title">E-mail:</Label>
@@ -154,6 +168,10 @@ class FormComponent extends Component {
             <Input type="textarea" name="mensagem_cliente" id="msgField" maxLength="350" />
           </FormGroup>
           <Button type="submit" style={{ marginTop: '2em'}}>Enviar</Button>
+          { showFeedbackMsg ? 
+            <Alert style={{ marginTop: '1em'}}>
+              <h4>Email enviado com sucesso!</h4>
+              <p>Obrigado pelo seu contato. Em breve entrarei em contato com você para maiores informações.</p></Alert> : null }
         </Form>
       </div>
     );
