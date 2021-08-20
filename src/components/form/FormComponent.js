@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Form, FormGroup, Label, Input, FormFeedback, Alert } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input, FormFeedback, Alert, Spinner } from 'reactstrap';
 import InputMask from 'react-input-mask';
 import emailjs from 'emailjs-com';
 
@@ -18,7 +18,8 @@ class FormComponent extends Component {
         nameState: '',
         emailState: '',
         celphoneState: '', 
-        showFeedbackMsg: false
+        showFeedbackMsg: false, 
+        showSpinner: false
       }
     };
     
@@ -73,38 +74,58 @@ class FormComponent extends Component {
     this.setState({ validate });
   }
 
-  sendEmail(e) {
+  handleSubmitForm(e) {
     debugger;
     e.preventDefault();
 
     const { validate } = this.state;
 
+    const promise = new Promise((resolve) => {
+      resolve();
+    });
+    
     if( validate.nameState     === 'has-success' & 
         validate.emailState    === 'has-success' & 
         validate.celphoneState === 'has-success') {
-          emailjs.sendForm(process.env.REACT_APP_SERVICE_ID,
-            process.env.REACT_APP_TEMPLATE_ID,
-            e.target,
-            process.env.REACT_APP_USER_ID)
-            .then((result) => {
-            validate.showFeedbackMsg = true;
-            this.setState({ validate });
-            console.log(result.text);
-            }, (error) => {
-            console.log(error.text);
-            });
+      
+      promise
+        .then( () => this.showSpinner(e, validate))
+        .then( () => this.sendEmail(e, validate));
+
         } else {
           return;
         }
   }
 
+  showSpinner(e, validateObj) {
+    const { target } = e;
+    target[4].disabled = true;
+    validateObj.showSpinner = true;
+    this.setState({ validateObj });
+    return validateObj;
+  }
+
+  sendEmail(e, validateObj) {
+    emailjs.sendForm(process.env.REACT_APP_SERVICE_ID,
+                     process.env.REACT_APP_TEMPLATE_ID,
+                     e.target,
+                     process.env.REACT_APP_USER_ID)
+      .then(( result ) => {
+        validateObj.showFeedbackMsg = true;
+        validateObj.showSpinner = false;
+        this.setState({ validateObj });
+      }, (error) => {
+        console.log(error.text);
+    });
+  }
+
   render() {
     const { clientName, clientEmail, clientPhone } = this.state;
-    const { showFeedbackMsg } = this.state.validate;
+    const { showFeedbackMsg, showSpinner } = this.state.validate;
     return(
       <div className="form-container">
         <Form onSubmit={ (e) => {
-          this.sendEmail(e);
+          this.handleSubmitForm(e);
         }}>
           <FormGroup className="field-size">
             <Label for="nameField" className="field-title">Nome:</Label>
@@ -167,7 +188,12 @@ class FormComponent extends Component {
             <Label for="msgField" className="field-title">Mensagem:</Label>
             <Input type="textarea" name="clientMessage" id="msgField" maxLength="350" />
           </FormGroup>
-          <Button type="submit" style={{ marginTop: '2em'}}>Enviar</Button>
+          <div className="button-container">
+            <Button type="submit">Enviar</Button>
+            { showSpinner ? 
+              <Spinner color="secondary" style={{ marginLeft: '1em' }}></Spinner> : null
+            }
+          </div>
           { showFeedbackMsg ? 
             <Alert style={{ marginTop: '1em'}}>
               <h4>Email enviado com sucesso!</h4>
