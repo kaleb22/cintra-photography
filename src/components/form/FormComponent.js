@@ -165,7 +165,7 @@ class FormComponent extends Component {
           </FormGroup>
           <FormGroup>
             <Label for="msgField" className="field-title">Mensagem:</Label>
-            <Input type="textarea" name="mensagem_cliente" id="msgField" maxLength="350" />
+            <Input type="textarea" name="clientMessage" id="msgField" maxLength="350" />
           </FormGroup>
           <Button type="submit" style={{ marginTop: '2em'}}>Enviar</Button>
           { showFeedbackMsg ? 
