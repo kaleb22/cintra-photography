@@ -20,7 +20,8 @@ class FormComponent extends Component {
         emailState: '',
         celphoneState: '', 
         showFeedbackMsg: false, 
-        showSpinner: false
+        showSpinner: false, 
+        showErrorMsg: false
       }
     };
     
@@ -112,7 +113,7 @@ class FormComponent extends Component {
     emailjs.sendForm(process.env.REACT_APP_SERVICE_ID,
                      process.env.REACT_APP_TEMPLATE_ID,
                      e.target,
-                     process.env.REACT_APP_USER_ID)
+                     'user_ePM302dwy97OTBPhyGTTDaa')
       .then(( result ) => {
         state.validate.showFeedbackMsg = true;
         state.validate.showSpinner = false;
@@ -128,12 +129,15 @@ class FormComponent extends Component {
       }, (error) => {
         console.log(error.text);
         target[4].disabled = false;
+        state.validate.showErrorMsg = true;
+        state.validate.showSpinner = false;
+        this.setState( state );
     });
   }
 
   render() {
     const { clientName, clientEmail, clientPhone, clientMessage } = this.state;
-    const { showFeedbackMsg, showSpinner } = this.state.validate;
+    const { showFeedbackMsg, showSpinner, showErrorMsg } = this.state.validate;
     return(
       <div className="form-container">
         <Form onSubmit={ (e) => {
@@ -218,6 +222,9 @@ class FormComponent extends Component {
             <Alert style={{ marginTop: '1em'}}>
               <h4>Email enviado com sucesso!</h4>
               <p>Obrigado pelo seu contato. Em breve entrarei em contato com você para maiores informações.</p></Alert> : null }
+          { showErrorMsg ? 
+            <Alert color="danger" style={{ marginTop: '1em'}}>
+              Ocorreu um erro com o envio do e-mail. Tente novamente mais tarde.</Alert> : null }
         </Form>
       </div>
     );
