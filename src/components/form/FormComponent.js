@@ -14,6 +14,7 @@ class FormComponent extends Component {
       clientName: '',
       clientEmail: '',
       clientPhone: '',
+      clientMessage: '',
       validate: {
         nameState: '',
         emailState: '',
@@ -75,10 +76,10 @@ class FormComponent extends Component {
   }
 
   handleSubmitForm(e) {
-    debugger;
     e.preventDefault();
 
     const { validate } = this.state;
+    const state = this.state;
 
     const promise = new Promise((resolve) => {
       resolve();
@@ -90,7 +91,7 @@ class FormComponent extends Component {
       
       promise
         .then( () => this.showSpinner(e, validate))
-        .then( () => this.sendEmail(e, validate));
+        .then( () => this.sendEmail(e, state));
 
         } else {
           return;
@@ -105,22 +106,33 @@ class FormComponent extends Component {
     return validateObj;
   }
 
-  sendEmail(e, validateObj) {
+  sendEmail(e, state) {
+    const { target } = e;
+    
     emailjs.sendForm(process.env.REACT_APP_SERVICE_ID,
                      process.env.REACT_APP_TEMPLATE_ID,
                      e.target,
                      process.env.REACT_APP_USER_ID)
       .then(( result ) => {
-        validateObj.showFeedbackMsg = true;
-        validateObj.showSpinner = false;
-        this.setState({ validateObj });
+        state.validate.showFeedbackMsg = true;
+        state.validate.showSpinner = false;
+        state.clientName    = '';
+        state.clientEmail   = '';
+        state.clientPhone   = '';
+        state.clientMessage = '';
+        state.validate.nameState     = '';
+        state.validate.emailState    = '';
+        state.validate.celphoneState = '';
+        
+        this.setState( state );
       }, (error) => {
         console.log(error.text);
+        target[4].disabled = false;
     });
   }
 
   render() {
-    const { clientName, clientEmail, clientPhone } = this.state;
+    const { clientName, clientEmail, clientPhone, clientMessage } = this.state;
     const { showFeedbackMsg, showSpinner } = this.state.validate;
     return(
       <div className="form-container">
@@ -186,7 +198,15 @@ class FormComponent extends Component {
           </FormGroup>
           <FormGroup>
             <Label for="msgField" className="field-title">Mensagem:</Label>
-            <Input type="textarea" name="clientMessage" id="msgField" maxLength="350" />
+            <Input 
+              type="textarea" 
+              name="clientMessage" 
+              id="msgField" 
+              maxLength="350"
+              value={ clientMessage }
+              onChange={ (e) => {
+                this.handleChanges(e);
+              }} />
           </FormGroup>
           <div className="button-container">
             <Button type="submit">Enviar</Button>
