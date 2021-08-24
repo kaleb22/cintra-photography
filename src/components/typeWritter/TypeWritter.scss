@@ -1,0 +1,38 @@
+.typewritter {
+  overflow: hidden; /* ensures the content is not revealed until the animation */
+  //white-space: nowrap; /* keeps content in a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typying happens */
+  letter-spacing: .15em;
+  font-family: Barlow Semi Condensed;
+  color: black;
+  text-align: center;
+  font-size: 2em;
+  animation: 
+    typing 3.5s steps(40, end),
+}
+
+.cursor {
+  border-right: .1em solid rgb(64, 64, 64); /* the typewritter cursor */
+  animation: 
+    blinked-caret .75s step-end infinite;
+}
+
+.typewritter-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2em;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blinked-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: rgb(64, 64, 64); }
+}
+
+@media only screen and (max-width: 600px) {
+}
