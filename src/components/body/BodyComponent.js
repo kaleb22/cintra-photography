@@ -35,7 +35,7 @@ const BodyComponent = () => {
     useEffect(() => {
       WebFont.load({
         google: {
-          families: ['Barlow Semi Condensed']
+          families: ['Barlow Semi Condensed:100, 500', 'Barlow Semi Condensed:400']
         }
       });
      }, []);
@@ -45,13 +45,29 @@ const BodyComponent = () => {
         <IconsComponent sectionTitle="Sobre Mim" id="sobreMim"></IconsComponent>
         <Row>
           <Col>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel justo sed dui faucibus placerat. Donec vitae nisi eget leo mattis faucibus. Pellentesque varius lacus eu quam ultricies, in auctor arcu consectetur. Nullam nulla metus, posuere sed volutpat id, interdum in diam. Pellentesque leo nisl, egestas non tristique et, imperdiet quis justo. Vivamus sem ex, efficitur ac purus vehicula, eleifend cursus ante. Praesent et sem at nisi cursus blandit.
-            </p>
+            <div >
+              <div className="about__title">
+                <h2>Olá! <span className="about__title--color">Sou a Raphaela Cintra</span></h2>
+              </div>
+              
+              <div className="about__container">
+                
+                <div className="about__img"></div>
+                
+                <div className="about__text">
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel justo sed dui faucibus placerat. Donec vitae nisi eget leo mattis faucibus. Pellentesque varius lacus eu quam ultricies, in auctor arcu consectetur. Nullam nulla metus, posuere sed volutpat id, interdum in diam.
+                  </p>
 
-            <p>
-              Phasellus euismod, magna ut sollicitudin porta, nisi urna auctor metus, vel fermentum est sem lacinia est. Nulla vitae efficitur justo. Vivamus in bibendum nisi. Aenean pellentesque elit eu nulla vehicula, vitae posuere urna faucibus. Vestibulum at sapien ac lorem vehicula volutpat vel sed est. Donec sit amet viverra quam, ac egestas magna. Integer ultrices scelerisque ligula nec feugiat. Mauris quis ipsum nibh.
-            </p>
+                  <div className="about__container">
+                      <a href="https://facebook.com" className="fa fa-facebook"></a>
+                      <a href="https://instagram.com" className="fa fa-instagram"></a>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
           </Col>
         </Row>
 
