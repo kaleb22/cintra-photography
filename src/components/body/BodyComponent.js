@@ -3,7 +3,6 @@ import React, {useEffect} from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import { UncontrolledCarousel } from 'reactstrap';
 import WebFont from 'webfontloader';
-import Scroll from '../scroll/Scroll.js';
 import IconsComponent from '../icons/IconsComponent';
 import FormComponent from '../form/FormComponent';
 
@@ -42,7 +41,6 @@ const BodyComponent = () => {
      }, []);
 
   return (
-    <Scroll>
       <Container>
         <IconsComponent sectionTitle="Sobre Mim" id="sobreMim"></IconsComponent>
         <Row>
@@ -98,7 +96,6 @@ const BodyComponent = () => {
         </Row>
 
       </Container>
-    </Scroll>
   )
 
 };
