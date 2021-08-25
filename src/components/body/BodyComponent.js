@@ -50,7 +50,6 @@ const BodyComponent = () => {
           </div>
           
           <div className="about__container">
-            
             <div className="about__img"></div>
 
             <div className="about__container__text">
@@ -71,13 +70,16 @@ const BodyComponent = () => {
         </Col>
       </Row>
 
-      <IconsComponent sectionTitle="Ensaios NewBorn" id="ensaioNewBorn"></IconsComponent>
-      <p className="center-text">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel justo sed dui faucibus placerat. Donec vitae nisi eget leo mattis faucibus.
-      </p>
+      <Row xl="1" className="bg-gray">
+        <IconsComponent sectionTitle="Ensaios NewBorn" id="ensaioNewBorn"></IconsComponent>
+        <p className="center-text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel justo sed dui faucibus placerat. Donec vitae nisi eget leo mattis faucibus.
+        </p>
 
-      <Row>
-        <UncontrolledCarousel items={items} indicators={false} controls={true} autoPlay={false}/>
+        
+        <div className="carousel">
+          <UncontrolledCarousel items={items} indicators={false} controls={true} autoPlay={false}/>
+        </div>
       </Row>
 
       <IconsComponent sectionTitle="Ensaios Gestante" id="ensaioGestante"></IconsComponent>
@@ -85,7 +87,7 @@ const BodyComponent = () => {
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel justo sed dui faucibus placerat. Donec vitae nisi eget leo mattis faucibus.
       </p>
 
-      <Row>
+      {/* <Row>
         <UncontrolledCarousel items={items} indicators={false} controls={true} autoPlay={false}/>
       </Row>
 
@@ -101,7 +103,7 @@ const BodyComponent = () => {
       <IconsComponent sectionTitle="Entre em contato" id="contato"></IconsComponent>
       <p className="center-text">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel justo sed dui faucibus placerat. Donec vitae nisi eget leo mattis faucibus.
-      </p>
+      </p> */}
 
       <Row>
         <FormComponent></FormComponent>
