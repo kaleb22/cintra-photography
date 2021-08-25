@@ -41,77 +41,77 @@ const BodyComponent = () => {
      }, []);
 
   return (
-      <Container>
-        <IconsComponent sectionTitle="Sobre Mim" id="sobreMim"></IconsComponent>
-        <Row>
-          <Col>
-            <div >
-              <div className="about__title">
-                <h2>Olá! <span className="about__title--color">Sou a Raphaela Cintra</span></h2>
-              </div>
-              
-              <div className="about__container">
-                
-                <div className="about__img"></div>
-                
-                <div className="about__text">
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel justo sed dui faucibus placerat. Donec vitae nisi eget leo mattis faucibus. Pellentesque varius lacus eu quam ultricies, in auctor arcu consectetur. Nullam nulla metus, posuere sed volutpat id, interdum in diam.
-                  </p>
+    <Container>
+      <IconsComponent sectionTitle="Sobre Mim" id="sobreMim"></IconsComponent>
+      <Row>
+        <Col>
+          <div className="about__title">
+            <h2>Olá! <span className="about__title--color">Sou a Raphaela Cintra</span></h2>
+          </div>
+          
+          <div className="about__container">
+            
+            <div className="about__img"></div>
 
-                  <div className="about__container">
-                      <a href="https://facebook.com" className="fa fa-facebook"></a>
-                      <a href="https://instagram.com" className="fa fa-instagram"></a>
-                  </div>
-
-                </div>
+            <div className="about__container__text">
+              <div className="about__text">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel justo sed dui faucibus placerat. Donec vitae nisi eget leo mattis faucibus. Pellentesque varius lacus eu quam ultricies, in auctor arcu consectetur. Nullam nulla metus, posuere sed volutpat id, interdum in diam.
+                </p>
+                <h5>Acesse minhas redes sociais:</h5>
               </div>
 
+              <div className="about__container__icons">
+                <a href="https://facebook.com" className="fa fa-facebook"> </a>
+                <a href="https://instagram.com" className="fa fa-instagram"> </a>
+              </div>
             </div>
-          </Col>
-        </Row>
+            
+          </div>
+        </Col>
+      </Row>
 
-        <IconsComponent sectionTitle="Ensaios NewBorn" id="ensaioNewBorn"></IconsComponent>
-        <p className="center-text">
+      <IconsComponent sectionTitle="Ensaios NewBorn" id="ensaioNewBorn"></IconsComponent>
+      <p className="center-text">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel justo sed dui faucibus placerat. Donec vitae nisi eget leo mattis faucibus.
+      </p>
+
+      <Row>
+        <UncontrolledCarousel items={items} indicators={false} controls={true} autoPlay={false}/>
+      </Row>
+
+      <IconsComponent sectionTitle="Ensaios Gestante" id="ensaioGestante"></IconsComponent>
+      <p className="center-text">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel justo sed dui faucibus placerat. Donec vitae nisi eget leo mattis faucibus.
+      </p>
+
+      <Row>
+        <UncontrolledCarousel items={items} indicators={false} controls={true} autoPlay={false}/>
+      </Row>
+
+      <IconsComponent sectionTitle="Ensaios Familia" id="ensaioFamilia"></IconsComponent>
+      <p className="center-text">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel justo sed dui faucibus placerat. Donec vitae nisi eget leo mattis faucibus.
+      </p>
+
+      <Row>
+        <UncontrolledCarousel items={items} indicators={false} controls={true} autoPlay={false}/>
+      </Row>
+
+      <IconsComponent sectionTitle="Entre em contato" id="contato"></IconsComponent>
+      <p className="center-text">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel justo sed dui faucibus placerat. Donec vitae nisi eget leo mattis faucibus.
-        </p>
+      </p>
 
-        <Row>
-          <UncontrolledCarousel items={items} indicators={false} controls={true} autoPlay={false}/>
-        </Row>
+      <Row>
+        <FormComponent></FormComponent>
+      </Row>
 
-        <IconsComponent sectionTitle="Ensaios Gestante" id="ensaioGestante"></IconsComponent>
-        <p className="center-text">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel justo sed dui faucibus placerat. Donec vitae nisi eget leo mattis faucibus.
-        </p>
+      <Row>
+        <div style={{ backgroundColor: '#bfbfb4', height: '6em' }}></div>
+      </Row>
 
-        <Row>
-          <UncontrolledCarousel items={items} indicators={false} controls={true} autoPlay={false}/>
-        </Row>
-
-        <IconsComponent sectionTitle="Ensaios Familia" id="ensaioFamilia"></IconsComponent>
-        <p className="center-text">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel justo sed dui faucibus placerat. Donec vitae nisi eget leo mattis faucibus.
-        </p>
-
-        <Row>
-          <UncontrolledCarousel items={items} indicators={false} controls={true} autoPlay={false}/>
-        </Row>
-
-        <IconsComponent sectionTitle="Entre em contato" id="contato"></IconsComponent>
-        <p className="center-text">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel justo sed dui faucibus placerat. Donec vitae nisi eget leo mattis faucibus.
-        </p>
-
-        <Row>
-          <FormComponent></FormComponent>
-        </Row>
-
-        <Row>
-          <div style={{ backgroundColor: '#bfbfb4', height: '6em' }}></div>
-        </Row>
-
-      </Container>
+    </Container>
   )
 
 };
