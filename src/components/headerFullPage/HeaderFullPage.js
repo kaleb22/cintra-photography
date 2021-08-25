@@ -6,7 +6,7 @@ class HeaderFullPage extends Component {
 
   render() {
     return (
-      <div className="bg" style={{ backgroundImage: "url(cintra-photography/img_parallax.jpg)"}}>
+      <div className="bg" style={{ backgroundImage: `url( ${process.env.PUBLIC_URL + '/img_parallax.jpg'})` }}>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
         <div className="standard-container">
           <div className="app-logo">
